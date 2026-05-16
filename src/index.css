@@ -1,0 +1,228 @@
+/* ═══════════════════════════════════════════════════════════
+   KPMG × Celonis PI Day — Global Design System
+   Color Palette: Navy, Blue, Purple — NO neon colors
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* KPMG Primary Colors */
+  --kpmg-blue: #00338D;
+  --kpmg-blue-light: #1A4FA8;
+  --kpmg-purple: #6B21C8;
+  --kpmg-purple-light: #7C3AED;
+
+  /* Dark Background Palette */
+  --bg-dark: #07091A;
+  --bg-navy: #0B0E2A;
+  --bg-card: #0E1235;
+  --bg-card-hover: #131740;
+  --bg-overlay: rgba(11, 14, 42, 0.85);
+
+  /* Gradient Accents */
+  --grad-primary: linear-gradient(135deg, #00338D 0%, #6B21C8 100%);
+  --grad-blue: linear-gradient(135deg, #0D47A1 0%, #1A4FA8 100%);
+  --grad-purple: linear-gradient(135deg, #4A1D96 0%, #7C3AED 100%);
+  --grad-hero: linear-gradient(135deg, #07091A 0%, #0D1A50 50%, #1E0B4F 100%);
+  --grad-section: linear-gradient(180deg, #07091A 0%, #0B0E2A 100%);
+
+  /* Section Accent Colors */
+  --accent-1: #2563EB;   /* AI Opp Discovery — Blue */
+  --accent-2: #7C3AED;   /* Business Context — Purple */
+  --accent-3: #BE185D;   /* Agent Monitoring — Rose/Magenta */
+  --accent-4: #0D9488;   /* Engineering Excellence — Teal */
+
+  /* Text Colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.80);
+  --text-muted: rgba(255, 255, 255, 0.55);
+  --text-subtle: rgba(255, 255, 255, 0.35);
+
+  /* Border Colors */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(255, 255, 255, 0.12);
+  --border-accent: rgba(37, 99, 235, 0.3);
+
+  /* Typography */
+  --font-primary: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spacing */
+  --nav-height: 72px;
+  --section-padding: 120px 8vw;
+  --section-padding-sm: 80px 6vw;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── RESET ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #050818;
+  background-image: url('/company-bg.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--kpmg-blue), var(--kpmg-purple));
+  border-radius: 3px;
+}
+
+/* ── TYPOGRAPHY ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* ── UTILITY CLASSES ── */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 6vw;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── BACKGROUND PARTICLES ── */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+  opacity: 0.15;
+}
+
+.bg-orb-1 {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, #00338D, transparent);
+  top: -200px;
+  right: -200px;
+}
+
+.bg-orb-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #6B21C8, transparent);
+  bottom: -150px;
+  left: -150px;
+}
+
+/* ── CARDS ── */
+.glass-card {
+  background: rgba(14, 18, 53, 0.6);
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ── BUTTONS ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: var(--grad-primary);
+  color: white;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(107, 33, 200, 0.4);
+}
+
+/* ── MODAL OVERLAY ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 9, 26, 0.9);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  padding: 4px;
+  transition: var(--transition-fast);
+}
+
+.modal-close:hover {
+  color: white;
+}
