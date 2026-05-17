@@ -82,6 +82,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ── SCROLLBAR ── */
@@ -225,4 +226,36 @@ h1, h2, h3, h4, h5, h6 {
 
 .modal-close:hover {
   color: white;
+}
+
+/* ── MOBILE GLOBAL RESPONSIVE ── */
+@media (max-width: 768px) {
+  body {
+    /* On mobile, fixed background can cause issues — use scroll instead */
+    background-attachment: scroll;
+  }
+
+  .modal-content {
+    padding: 28px 20px;
+    max-width: calc(100vw - 40px);
+  }
+
+  .container {
+    padding: 0 5vw;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
+  .modal-content {
+    padding: 24px 16px;
+  }
 }

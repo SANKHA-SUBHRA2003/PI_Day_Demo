@@ -94,7 +94,17 @@
   .card-grid-2 { grid-template-columns: 1fr; }
   .card-grid-3 { grid-template-columns: 1fr; }
   .card-grid-4 { grid-template-columns: 1fr; }
-  .pi-section { padding: 80px 6vw; }
+  .pi-section { padding: 72px 5vw; }
+  .section-title { font-size: clamp(28px, 7vw, 48px); }
+  .section-subtitle { font-size: 15px; }
+  .section-intro { margin-bottom: 48px; }
+}
+
+@media (max-width: 480px) {
+  .pi-section { padding: 56px 5vw; }
+  .section-title { font-size: clamp(24px, 8vw, 36px); }
+  .info-card { padding: 20px; }
+  .phase-card { padding: 20px 16px; }
 }
 
 /* ── INFO CARD ── */

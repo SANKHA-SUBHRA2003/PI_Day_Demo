@@ -31,9 +31,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
         >
-          <span className="outlined">No AI</span>
-          <span>without</span>
-          <span className="highlight highlight-outlined">PI.</span>
+          <span className="outlined">How can PI</span>
+          <span>accelerate AI</span>
+          <span className="highlight highlight-outlined">... through and through</span>
         </motion.h1>
 
         {/* Tagline */}

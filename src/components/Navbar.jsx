@@ -8,6 +8,7 @@ const navItems = [
   { label: 'Business Context', href: '/business-context' },
   { label: 'Agent Monitoring', href: '/agent-monitoring' },
   { label: 'Engineering Excellence', href: '/engineering' },
+  { label: 'KPMG Process Intelligence Hub', href: '/pi-hub', isHub: true },
 ];
 
 export default function Navbar({ onContactClick }) {
@@ -20,17 +21,20 @@ export default function Navbar({ onContactClick }) {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Close mobile menu on resize to desktop
+  useEffect(() => {
+    const onResize = () => { if (window.innerWidth > 1024) setMobileOpen(false); };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
   const handleNavClick = (e, item) => {
     e.preventDefault();
     setMobileOpen(false);
     if (item.isHome) {
-      // Scroll to top of current page or navigate home
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      if (window.location.pathname !== '/') {
-        window.location.href = '/';
-      }
+      if (window.location.pathname !== '/') window.location.href = '/';
     } else {
-      // Open section in new tab
       window.open(item.href, '_blank', 'noopener,noreferrer');
     }
   };
@@ -43,10 +47,7 @@ export default function Navbar({ onContactClick }) {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
       >
-
-
-
-        {/* Nav Links */}
+        {/* Nav Links — desktop */}
         <ul className="nav-links">
           {navItems.map((item) => (
             <li key={item.href}>
@@ -55,6 +56,7 @@ export default function Navbar({ onContactClick }) {
                 onClick={(e) => handleNavClick(e, item)}
                 target={item.isHome ? undefined : '_blank'}
                 rel={item.isHome ? undefined : 'noopener noreferrer'}
+                className={item.isHub ? 'nav-hub-link' : ''}
               >
                 {item.label}
                 {!item.isHome && (
@@ -87,6 +89,54 @@ export default function Navbar({ onContactClick }) {
           <span style={{ transform: mobileOpen ? 'rotate(-45deg) translate(4px, -4px)' : 'none' }} />
         </button>
       </motion.nav>
+
+      {/* Mobile Drawer */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              className="mobile-backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMobileOpen(false)}
+            />
+            {/* Drawer */}
+            <motion.div
+              className="mobile-drawer"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 28, stiffness: 300 }}
+            >
+              <ul className="mobile-nav-links">
+                {navItems.map((item) => (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      onClick={(e) => handleNavClick(e, item)}
+                      target={item.isHome ? undefined : '_blank'}
+                      rel={item.isHome ? undefined : 'noopener noreferrer'}
+                      className={item.isHub ? 'mobile-hub-link' : ''}
+                    >
+                      {item.label}
+                      {!item.isHome && (
+                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginLeft: 6, opacity: 0.5 }}>
+                          <path d="M2 10L10 2M10 2H5M10 2v5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      )}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <button className="nav-contact-btn mobile-contact-btn" onClick={() => { setMobileOpen(false); onContactClick(); }}>
+                📋 Contact Us
+              </button>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }

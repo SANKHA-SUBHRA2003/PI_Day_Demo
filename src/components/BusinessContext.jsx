@@ -131,6 +131,40 @@ export default function BusinessContext() {
           </p>
         </motion.div>
 
+        {/* ── NEW: Gap / Enrichment / Example cards ── */}
+        <SlideHeading fromRight>
+          <div className="section-label" style={{ color: ACCENT, marginBottom: 12 }}>Context at a Glance</div>
+          <h3 style={{ fontSize: 28, fontWeight: 800, color: 'white', marginBottom: 48 }}>
+            Understanding Business Context Enrichment
+          </h3>
+        </SlideHeading>
+
+        <div className="card-grid-3" style={{ marginBottom: 80 }}>
+          <AnimCard delay={0}>
+            <div className="info-card-icon" style={{ fontSize: 32 }}>⚠️</div>
+            <span className="badge" style={{ borderColor: `${ACCENT}40`, color: ACCENT, background: `${ACCENT}10`, marginBottom: 12 }}>
+              The Gap
+            </span>
+            <div className="info-card-title">Standard models capture events, IDs, and timestamps but lack business context</div>
+          </AnimCard>
+
+          <AnimCard delay={0.1}>
+            <div className="info-card-icon" style={{ fontSize: 32 }}>✨</div>
+            <span className="badge" style={{ borderColor: `${ACCENT}40`, color: ACCENT, background: `${ACCENT}10`, marginBottom: 12 }}>
+              The Enrichment
+            </span>
+            <div className="info-card-title">Add business context such as rules, relationships, and classification. Incorporate domain knowledge</div>
+          </AnimCard>
+
+          <AnimCard delay={0.2}>
+            <div className="info-card-icon" style={{ fontSize: 32 }}>💡</div>
+            <span className="badge" style={{ borderColor: `${ACCENT}40`, color: ACCENT, background: `${ACCENT}10`, marginBottom: 12 }}>
+              Example
+            </span>
+            <div className="info-card-title">Enhance vendor data with risk and importance. Help distinguish critical suppliers from low impact vendors</div>
+          </AnimCard>
+        </div>
+
         {/* Five Layers */}
         <SlideHeading>
           <div className="section-label" style={{ color: ACCENT, marginBottom: 12 }}>Five Layers of Business Context</div>

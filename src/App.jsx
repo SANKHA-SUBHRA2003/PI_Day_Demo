@@ -8,6 +8,7 @@ import AIOpportunity from './components/AIOpportunity';
 import BusinessContext from './components/BusinessContext';
 import AgentMonitoring from './components/AgentMonitoring';
 import Engineering from './components/Engineering';
+import PIHub from './components/PIHub';
 import SectionPage from './components/SectionPage';
 import './index.css';
 
@@ -39,6 +40,9 @@ export default function App() {
       } />
       <Route path="/engineering" element={
         <SectionPage><Engineering /></SectionPage>
+      } />
+      <Route path="/pi-hub" element={
+        <SectionPage><PIHub /></SectionPage>
       } />
     </Routes>
   );
