@@ -35,7 +35,8 @@
   overflow: hidden;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-link-btn {
   font-size: 12px;
   font-weight: 500;
   color: var(--text-muted);
@@ -47,9 +48,14 @@
   letter-spacing: 0.01em;
   display: inline-flex;
   align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-link-btn:hover {
   color: white;
   background: rgba(255, 255, 255, 0.07);
 }

@@ -3,12 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 
 const navItems = [
-  { label: 'Overview', href: '/', isHome: true },
-  { label: 'AI Opportunity Discovery', href: '/ai-opportunity' },
-  { label: 'Business Context', href: '/business-context' },
-  { label: 'Agent Monitoring', href: '/agent-monitoring' },
-  { label: 'Engineering Excellence', href: '/engineering' },
-  { label: 'KPMG Process Intelligence Hub', href: '/pi-hub', isHub: true },
+  { label: 'Overview', href: '#top', isHome: true },
+  { label: 'AI Opportunity Discovery', href: '#ai-opportunity', sectionId: 'ai-opportunity' },
+  { label: 'Business Context', href: '#business-context', sectionId: 'business-context' },
+  { label: 'Agent Monitoring', href: '#agent-monitoring', sectionId: 'agent-monitoring' },
+  { label: 'Engineering Excellence', href: '#engineering', sectionId: 'engineering' },
 ];
 
 export default function Navbar({ onContactClick }) {
@@ -33,9 +32,9 @@ export default function Navbar({ onContactClick }) {
     setMobileOpen(false);
     if (item.isHome) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      if (window.location.pathname !== '/') window.location.href = '/';
-    } else {
-      window.open(item.href, '_blank', 'noopener,noreferrer');
+    } else if (item.sectionId) {
+      const el = document.getElementById(item.sectionId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -51,20 +50,12 @@ export default function Navbar({ onContactClick }) {
         <ul className="nav-links">
           {navItems.map((item) => (
             <li key={item.href}>
-              <a
-                href={item.href}
+              <button
+                className="nav-link-btn"
                 onClick={(e) => handleNavClick(e, item)}
-                target={item.isHome ? undefined : '_blank'}
-                rel={item.isHome ? undefined : 'noopener noreferrer'}
-                className={item.isHub ? 'nav-hub-link' : ''}
               >
                 {item.label}
-                {!item.isHome && (
-                  <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginLeft: 5, opacity: 0.5 }}>
-                    <path d="M2 10L10 2M10 2H5M10 2v5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                )}
-              </a>
+              </button>
             </li>
           ))}
         </ul>
@@ -113,20 +104,12 @@ export default function Navbar({ onContactClick }) {
               <ul className="mobile-nav-links">
                 {navItems.map((item) => (
                   <li key={item.href}>
-                    <a
-                      href={item.href}
+                    <button
+                      className="nav-link-btn"
                       onClick={(e) => handleNavClick(e, item)}
-                      target={item.isHome ? undefined : '_blank'}
-                      rel={item.isHome ? undefined : 'noopener noreferrer'}
-                      className={item.isHub ? 'mobile-hub-link' : ''}
                     >
                       {item.label}
-                      {!item.isHome && (
-                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginLeft: 6, opacity: 0.5 }}>
-                          <path d="M2 10L10 2M10 2H5M10 2v5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      )}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>

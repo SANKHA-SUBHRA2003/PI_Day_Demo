@@ -110,31 +110,7 @@ export default function Engineering() {
           ))}
         </div>
 
-        {/* Implementation Roadmap */}
-        <SlideHeading>
-          <div className="section-label" style={{ color: ACCENT, marginBottom: 12 }}>Implementation Roadmap</div>
-          <h3 style={{ fontSize: 28, fontWeight: 800, color: 'white', marginBottom: 48 }}>
-            Engineering Excellence in 6 Weeks
-          </h3>
-        </SlideHeading>
 
-        <div className="phase-track">
-          {phases.map((p, i) => (
-            <motion.div
-              key={i} className="phase-card" style={{ borderTopColor: p.color }}
-              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }}
-            >
-              <div style={{ fontSize: 28, marginBottom: 10 }}>{p.icon}</div>
-              <div className="phase-week" style={{ color: p.color }}>{p.week}</div>
-              <div className="phase-name">{p.name}</div>
-              <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, marginBottom: 16 }}>{p.desc}</p>
-              <ul className="phase-tasks">
-                {p.points.map((pt, j) => <li key={j}>{pt}</li>)}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
 
       </div>
     </section>
