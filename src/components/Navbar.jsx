@@ -167,12 +167,7 @@ export function ContactModal({ isOpen, onClose }) {
                 <div className="qr-modal-role">Partner, Digital Platforms</div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', marginTop: 4 }}>anujkumar2@kpmg.com</div>
                 <div className="qr-modal-company">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="white">
-                    <rect x="0" y="0" width="5" height="5" rx="0.3" />
-                    <rect x="7" y="0" width="5" height="5" rx="0.3" />
-                    <rect x="0" y="7" width="5" height="5" rx="0.3" />
-                    <rect x="7" y="7" width="5" height="5" rx="0.3" />
-                  </svg>
+                  <img src="/kpmg-logo.png" alt="KPMG" style={{ height: 14, objectFit: 'contain', filter: 'brightness(0) invert(1)', opacity: 0.9 }} />
                   KPMG Digital Platforms
                 </div>
               </div>

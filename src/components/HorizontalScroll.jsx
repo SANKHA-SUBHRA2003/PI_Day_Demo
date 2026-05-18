@@ -1,4 +1,7 @@
 import './HorizontalScroll.css';
+import './Section.css';
+import { AnimCard } from './SectionUtils';
+import { SearchIcon, NetworkIcon, LineChartIcon, GearIcon } from './Icons';
 
 const PILLARS = [
   {
@@ -7,8 +10,7 @@ const PILLARS = [
     desc: 'Identify and prioritise AI opportunities using a structured, data led approach grounded in process intelligence and context enrichment.',
     sectionId: 'ai-opportunity',
     accent: '#2563EB',
-    accentLight: '#93C5FD',
-    icon: '🔍',
+    Icon: SearchIcon,
   },
   {
     num: '02',
@@ -16,8 +18,7 @@ const PILLARS = [
     desc: 'Enhance process data with business context to enable more accurate, compliant, and context aware AI decisions.',
     sectionId: 'business-context',
     accent: '#7C3AED',
-    accentLight: '#C4B5FD',
-    icon: '🧠',
+    Icon: NetworkIcon,
   },
   {
     num: '03',
@@ -25,8 +26,7 @@ const PILLARS = [
     desc: 'Establish visibility and control over AI driven decisions through agent mining for structured monitoring and governance.',
     sectionId: 'agent-monitoring',
     accent: '#BE185D',
-    accentLight: '#F9A8D4',
-    icon: '📡',
+    Icon: LineChartIcon,
   },
   {
     num: '04',
@@ -34,8 +34,7 @@ const PILLARS = [
     desc: 'Scan to uncover engineering gaps, excellence opportunities and systematic remediation for a fully governed and AI ready Celonis Platform.',
     sectionId: 'engineering',
     accent: '#0D9488',
-    accentLight: '#5EEAD4',
-    icon: '⚙️',
+    Icon: GearIcon,
   },
 ];
 
@@ -43,48 +42,81 @@ export default function HorizontalScroll() {
   return (
     <div className="pillars-section">
       <div className="pillars-label">
-        <span className="pillars-label-line" />
         How Process Intelligence Accelerates AI
-        <span className="pillars-label-line" />
       </div>
       <div className="pillars-grid">
         {PILLARS.map((p, i) => (
-          <PillarCard key={i} pillar={p} />
+          <PillarCard key={i} pillar={p} index={i} />
         ))}
       </div>
     </div>
   );
 }
 
-function PillarCard({ pillar }) {
+function PillarCard({ pillar, index }) {
   const handleClick = () => {
     const el = document.getElementById(pillar.sectionId);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <div
-      className="pillar-card"
-      style={{ '--accent': pillar.accent, '--accent-light': pillar.accentLight }}
-      onClick={handleClick}
-      tabIndex={0}
-      role="button"
-      onKeyDown={(e) => e.key === 'Enter' && handleClick()}
-    >
-      <div className="pillar-card-num">{pillar.num}</div>
-      <div className="pillar-card-glow" />
-      <div className="pillar-card-inner">
-        <div className="pillar-card-bar" />
-        <div className="pillar-card-icon">{pillar.icon}</div>
-        <h3 className="pillar-card-label">{pillar.label}</h3>
-        <p className="pillar-card-desc">{pillar.desc}</p>
-        <div className="pillar-card-cta">
-          <span>Explore</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-            <path d="M12 5l0 14M5 12l7 7 7-7" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </div>
+    <AnimCard delay={index * 0.1} className="pillar-info-card">
+      <div
+        className="info-card-icon"
+        style={{ color: pillar.accent, cursor: 'pointer' }}
+        onClick={handleClick}
+      >
+        <pillar.Icon s={28} />
       </div>
-    </div>
+      <span
+        className="badge"
+        style={{
+          borderColor: `${pillar.accent}40`,
+          color: 'white',
+          background: `${pillar.accent}10`,
+          marginBottom: 8,
+        }}
+      >
+        {pillar.num}
+      </span>
+      <div className="info-card-title" style={{ cursor: 'pointer' }} onClick={handleClick}>
+        {pillar.label}
+      </div>
+      <p className="info-card-desc">{pillar.desc}</p>
+      <button
+        onClick={handleClick}
+        style={{
+          marginTop: 'auto',
+          alignSelf: 'flex-start',
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 8,
+          padding: '8px 18px',
+          background: 'transparent',
+          border: `1.5px solid ${pillar.accent}60`,
+          borderRadius: 50,
+          color: pillar.accent,
+          fontSize: 11,
+          fontWeight: 700,
+          letterSpacing: '0.07em',
+          textTransform: 'uppercase',
+          cursor: 'pointer',
+          transition: 'all 0.3s ease',
+        }}
+        onMouseEnter={e => {
+          e.currentTarget.style.background = pillar.accent;
+          e.currentTarget.style.color = 'white';
+        }}
+        onMouseLeave={e => {
+          e.currentTarget.style.background = 'transparent';
+          e.currentTarget.style.color = pillar.accent;
+        }}
+      >
+        Explore
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+    </AnimCard>
   );
 }

@@ -27,8 +27,15 @@ export default function Footer({ onContactClick }) {
     }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 48, marginBottom: 56 }}>
-          {/* Brand — no logo on homepage */}
+          {/* Brand */}
           <div>
+            <div style={{ marginBottom: 16 }}>
+              <img
+                src="/kpmg-logo.png"
+                alt="KPMG"
+                style={{ height: 32, objectFit: 'contain', filter: 'brightness(0) invert(1)', opacity: 0.9 }}
+              />
+            </div>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.75, maxWidth: 280 }}>
               KPMG Digital Platforms team, delivering AI-powered process excellence through Celonis Process Intelligence.
             </p>

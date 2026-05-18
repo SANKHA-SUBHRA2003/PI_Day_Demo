@@ -1,24 +1,25 @@
 import { motion } from 'framer-motion';
 import { SectionHeading, AnimCard, BgOrbs, SlideHeading } from './SectionUtils';
+import { GearIcon, TargetIcon, BarChartIcon, CpuIcon, UsersIcon, FileEditIcon } from './Icons';
 import './Section.css';
 
 const ACCENT = '#2563EB';
 
 const categories = [
   {
-    icon: '⚙️',
+    Icon: GearIcon,
     title: 'AI that Augments Human Work',
     desc: 'Manual, repetitive, high-frequency activities that can be automated or augmented using AI. Identified through high volume and low existing automation rates in the process flow.',
     tag: 'EFFORT',
   },
   {
-    icon: '🎯',
+    Icon: TargetIcon,
     title: 'AI that Avoids Human Misses',
     desc: 'Activities prone to deviations, missed approvals, or non-conformance. AI detects and corrects issues before they escalate into financial or compliance losses.',
     tag: 'RECO',
   },
   {
-    icon: '📊',
+    Icon: BarChartIcon,
     title: 'AI that Improves Data Quality',
     desc: 'Targets incomplete or inaccurate master data — vendor, material, cost centre — that causes downstream process failures, scored and enriched through a dedicated data quality model.',
     tag: 'DATA QUALITY',
@@ -27,21 +28,21 @@ const categories = [
 
 const actionTypes = [
   {
-    icon: '🤖',
+    Icon: CpuIcon,
     title: 'AI Executes — No Human Needed',
     desc: 'Structured, rule-based activities where AI can complete the task with full confidence. Typically applied to straight-through processing, field auto-population, and pre-approved decisions.',
     tag: 'Fully Automated',
     accent: '#0F6B4F',
   },
   {
-    icon: '🤝',
+    Icon: UsersIcon,
     title: 'AI Recommends — Human Confirms',
     desc: 'Judgement-heavy activities where AI narrows options and presents a ranked recommendation, but a human makes the final call. Ideal for exception routing and complex approvals.',
     tag: 'Human in Loop',
     accent: '#2563EB',
   },
   {
-    icon: '✍️',
+    Icon: FileEditIcon,
     title: 'AI Drafts — Human Executes',
     desc: 'Communication or documentation-heavy tasks where AI prepares a high-quality draft. The human reviews and sends — combining AI speed with human accountability.',
     tag: 'AI Prepares',
@@ -58,7 +59,7 @@ export default function AIOpportunity() {
         <SlideHeading>
           <div className="section-intro">
             <div className="section-num" style={{ background: '#1E4DE018', borderColor: '#1E4DE040', color: ACCENT }}>01</div>
-            <div className="section-label" style={{ color: ACCENT }}>Process Intelligence AI Lifecycle</div>
+            <div className="section-label" style={{ color: 'white' }}>Process Intelligence AI Lifecycle</div>
             <h2 className="section-title">
               AI Opportunity<br />
               <span style={{ color: ACCENT }}>Discovery</span>
@@ -76,7 +77,7 @@ export default function AIOpportunity() {
 
         {/* Three Categories */}
         <SlideHeading>
-          <div className="section-label" style={{ color: ACCENT, marginBottom: 12 }}>Three Scoring Categories</div>
+          <div className="section-label" style={{ color: 'white', marginBottom: 12 }}>Three Scoring Categories</div>
           <h3 style={{ fontSize: 28, fontWeight: 800, color: 'white', marginBottom: 48 }}>
             How Each Opportunity is Identified &amp; Classified
           </h3>
@@ -84,8 +85,8 @@ export default function AIOpportunity() {
         <div className="card-grid-3">
           {categories.map((cat, i) => (
             <AnimCard key={i} delay={i * 0.12}>
-              <div className="info-card-icon" style={{ fontSize: 28 }}>{cat.icon}</div>
-              <span className="badge" style={{ borderColor: `${ACCENT}40`, color: ACCENT, background: `${ACCENT}10`, marginBottom: 12 }}>
+              <div className="info-card-icon" style={{ color: ACCENT, fontSize: 28 }}><cat.Icon s={28} /></div>
+              <span className="badge" style={{ borderColor: `${ACCENT}40`, color: 'white', background: `${ACCENT}10`, marginBottom: 12 }}>
                 {cat.tag}
               </span>
               <div className="info-card-title">{cat.title}</div>
@@ -97,7 +98,7 @@ export default function AIOpportunity() {
         {/* Action Types */}
         <div style={{ marginTop: 80 }}>
           <SlideHeading fromRight>
-            <div className="section-label" style={{ color: ACCENT, marginBottom: 12 }}>Three Action Types</div>
+            <div className="section-label" style={{ color: 'white', marginBottom: 12 }}>Three Action Types</div>
             <h3 style={{ fontSize: 28, fontWeight: 800, color: 'white', marginBottom: 48 }}>
               What Should the AI Actually Do?
             </h3>
@@ -105,8 +106,8 @@ export default function AIOpportunity() {
           <div className="card-grid-3">
             {actionTypes.map((at, i) => (
               <AnimCard key={i} delay={i * 0.12}>
-                <div className="info-card-icon" style={{ fontSize: 28 }}>{at.icon}</div>
-                <span className="badge" style={{ borderColor: `${at.accent}40`, color: at.accent, background: `${at.accent}10`, marginBottom: 12 }}>
+                <div className="info-card-icon" style={{ color: at.accent, fontSize: 28 }}><at.Icon s={28} /></div>
+                <span className="badge" style={{ borderColor: `${at.accent}40`, color: 'white', background: `${at.accent}10`, marginBottom: 12 }}>
                   {at.tag}
                 </span>
                 <div className="info-card-title">{at.title}</div>
