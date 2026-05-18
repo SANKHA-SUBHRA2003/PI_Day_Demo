@@ -6,6 +6,7 @@ import AIOpportunity from './components/AIOpportunity';
 import BusinessContext from './components/BusinessContext';
 import AgentMonitoring from './components/AgentMonitoring';
 import Engineering from './components/Engineering';
+import RiskCompliance from './components/RiskCompliance';
 import './index.css';
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
       <BusinessContext />
       <AgentMonitoring />
       <Engineering />
+      <RiskCompliance />
       <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
     </>
   );

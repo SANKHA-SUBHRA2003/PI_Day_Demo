@@ -1,7 +1,7 @@
 import './HorizontalScroll.css';
 import './Section.css';
 import { AnimCard } from './SectionUtils';
-import { SearchIcon, NetworkIcon, LineChartIcon, GearIcon } from './Icons';
+import { SearchIcon, NetworkIcon, LineChartIcon, GearIcon, ShieldCheckIcon } from './Icons';
 
 const PILLARS = [
   {
@@ -35,6 +35,14 @@ const PILLARS = [
     sectionId: 'engineering',
     accent: '#0D9488',
     Icon: GearIcon,
+  },
+  {
+    num: '05',
+    label: 'Risk & Compliance Excellence',
+    desc: 'Design and govern control ecosystems using a structured, data-driven approach powered by process intelligence and continuous monitoring.',
+    sectionId: 'risk-compliance',
+    accent: '#7C3AED',
+    Icon: ShieldCheckIcon,
   },
 ];
 

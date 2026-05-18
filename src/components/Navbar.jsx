@@ -8,6 +8,7 @@ const navItems = [
   { label: 'Business Context', href: '#business-context', sectionId: 'business-context' },
   { label: 'Agent Monitoring', href: '#agent-monitoring', sectionId: 'agent-monitoring' },
   { label: 'Engineering Excellence', href: '#engineering', sectionId: 'engineering' },
+  { label: 'Risk & Compliance', href: '#risk-compliance', sectionId: 'risk-compliance' },
 ];
 
 export default function Navbar({ onContactClick }) {
