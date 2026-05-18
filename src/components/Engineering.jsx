@@ -71,7 +71,7 @@ export default function Engineering() {
         <SlideHeading fromRight>
           <div className="section-intro">
             <div className="section-num" style={{ background: `${ACCENT}18`, borderColor: `${ACCENT}40`, color: ACCENT }}>04</div>
-            <div className="section-label" style={{ color: ACCENT }}>Act 04 of 04 — Platform Foundation</div>
+            <div className="section-label" style={{ color: ACCENT }}>Platform Foundation</div>
             <h2 className="section-title">
               Engineering<br />
               <span style={{ color: ACCENT }}>Excellence</span>
@@ -81,10 +81,10 @@ export default function Engineering() {
 
         <SlideHeading>
           <p className="section-subtitle" style={{ marginBottom: 72 }}>
-            The unglamorous work that makes everything else possible. Every AI agent, every prediction,
-            every recommendation built in the other pillars runs on this foundation.
-            When this layer is weak — <strong>everything built on top of it eventually fails</strong>.
-            We diagnose, remediate, and govern the Celonis platform across six dimensions.
+            This is foundational work that enables everything else. Every AI agent, prediction,
+            and AI recommendation built across other pillars depends on it.
+            When this layer is not strong — <strong>everything built on top eventually breaks down</strong>.
+            We assess, fix, and manage the Celonis platform across six key dimensions.
           </p>
         </SlideHeading>
 
@@ -93,7 +93,7 @@ export default function Engineering() {
           <div className="section-label" style={{ color: ACCENT, marginBottom: 12 }}>Six Engineering Dimensions</div>
           <h3 style={{ fontSize: 28, fontWeight: 800, color: 'white', marginBottom: 16 }}>What We Audit, Fix, and Govern</h3>
           <p style={{ fontSize: 15, color: 'var(--text-muted)', marginBottom: 48, maxWidth: 640 }}>
-            Every Celonis environment we work with carries the same technical debt — accumulated during rapid pilots, consultant handoffs, and scope creep. We audit across six dimensions and produce a prioritised backlog.
+            Most process mining app environments have similar structural issues — accumulated during rapid pilots, consultant handoffs, and scope creep. We audit across six dimensions and produce a prioritised backlog.
           </p>
         </SlideHeading>
 

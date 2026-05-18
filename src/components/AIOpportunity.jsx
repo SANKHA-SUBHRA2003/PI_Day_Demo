@@ -58,7 +58,7 @@ export default function AIOpportunity() {
         <SlideHeading>
           <div className="section-intro">
             <div className="section-num" style={{ background: '#1E4DE018', borderColor: '#1E4DE040', color: ACCENT }}>01</div>
-            <div className="section-label" style={{ color: ACCENT }}>Act 01 of 04 — Process Intelligence AI Lifecycle</div>
+            <div className="section-label" style={{ color: ACCENT }}>Process Intelligence AI Lifecycle</div>
             <h2 className="section-title">
               AI Opportunity<br />
               <span style={{ color: ACCENT }}>Discovery</span>
@@ -68,10 +68,9 @@ export default function AIOpportunity() {
 
         <SlideHeading fromRight delay={0.15}>
           <p className="section-subtitle" style={{ marginBottom: 64 }}>
-            Stop answering "where should we use AI?" with workshops and gut feel.
-            Use <strong>process intelligence</strong> to surface a ranked, evidence-based
-            AI Opportunity Funnel — every activity scored by category, impact,
-            complexity, and recommended action type.
+            Shift from intuition or workshops towards a <strong>process intelligence</strong> approach
+            that builds a ranked, evidence-based AI Opportunity Funnel — where every activity is
+            evaluated by category, impact, complexity, and the most suitable action type.
           </p>
         </SlideHeading>
 

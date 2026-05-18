@@ -26,11 +26,11 @@ const pillars = [
 ];
 
 const hitlSteps = [
-  { icon: '✅', label: 'Auto-Process', desc: 'High-confidence, rule-compliant decisions execute automatically without human review.' },
-  { icon: '⚖️', label: 'Confidence Check', desc: 'Decisions below threshold route to the human review queue automatically.' },
-  { icon: '📥', label: 'Escalation Queue', desc: 'Reviewer receives the case with full context, agent reasoning trace, and recommended actions.' },
-  { icon: '✏️', label: 'Override & Reason', desc: 'Human confirms, modifies, or overrides the decision. A reason code is mandatory and immutable.' },
-  { icon: '🗄️', label: 'Audit Trail', desc: 'All decisions — automated and human — are written to an immutable log, exportable for regulatory submission.' },
+  { icon: '✅', label: 'Auto Process', desc: 'High-confidence, rule-compliant decisions execute automatically without human intervention.' },
+  { icon: '⚖️', label: 'Confidence Check', desc: 'Every decision is scored. Those below the confidence threshold are automatically flagged for review.' },
+  { icon: '📥', label: 'Escalation Queue', desc: 'Flagged cases are routed to a reviewer with full context, agent reasoning trace, and recommended actions.' },
+  { icon: '✏️', label: 'Override & Reason', desc: 'The human confirms, modifies, or overrides. A reason code is mandatory and permanently recorded.' },
+  { icon: '🗄️', label: 'Audit Trail', desc: 'Every decision — automated and human — is written to an immutable log, exportable for compliance.' },
 ];
 
 const behaviourChecks = [
@@ -49,7 +49,7 @@ export default function AgentMonitoring() {
         <SlideHeading>
           <div className="section-intro">
             <div className="section-num" style={{ background: `${ACCENT}18`, borderColor: `${ACCENT}40`, color: ACCENT }}>03</div>
-            <div className="section-label" style={{ color: ACCENT }}>Act 03 of 04 — Governance & Control</div>
+            <div className="section-label" style={{ color: ACCENT }}>Governance & Control</div>
             <h2 className="section-title">
               AI Agent<br />
               <span style={{ color: ACCENT }}>Monitoring</span>
@@ -59,10 +59,10 @@ export default function AgentMonitoring() {
 
         <SlideHeading fromRight delay={0.15}>
           <p className="section-subtitle" style={{ marginBottom: 64 }}>
-            Deploying AI agents without monitoring is not innovation — it is{' '}
-            <strong>uncontrolled automation at enterprise scale</strong>. This framework gives you
-            complete visibility into what every agent decided, why it decided it, what the business
-            outcome was, and where a human needs to step in.
+            Deploying AI agents without proper monitoring moves beyond innovation into
+            {' '}<strong>large-scale automation without control</strong>. This framework delivers
+            full transparency — showing what each agent decided, the reasoning behind it,
+            the business impact it created, and where human intervention is required.
           </p>
         </SlideHeading>
 
@@ -113,19 +113,17 @@ export default function AgentMonitoring() {
           </h3>
         </SlideHeading>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16, maxWidth: 720 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16 }}>
           {hitlSteps.map((s, i) => (
             <motion.div
               key={i}
-              style={{ display: 'flex', alignItems: 'flex-start', gap: 20, padding: '20px 24px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderLeft: '3px solid #059669', borderRadius: 10 }}
-              initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 12, padding: '20px 20px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderTop: '3px solid #059669', borderRadius: 10 }}
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }}
             >
-              <div style={{ fontSize: 24, flexShrink: 0 }}>{s.icon}</div>
-              <div>
-                <div style={{ fontWeight: 700, color: 'white', marginBottom: 6 }}>{i + 1}. {s.label}</div>
-                <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.58)', lineHeight: 1.7, margin: 0 }}>{s.desc}</p>
-              </div>
+              <div style={{ fontSize: 26 }}>{s.icon}</div>
+              <div style={{ fontWeight: 700, color: 'white', fontSize: 14 }}>{i + 1}. {s.label}</div>
+              <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.58)', lineHeight: 1.65, margin: 0 }}>{s.desc}</p>
             </motion.div>
           ))}
         </div>

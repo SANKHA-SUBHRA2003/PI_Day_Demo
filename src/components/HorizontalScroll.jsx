@@ -9,7 +9,6 @@ const PILLARS = [
     accent: '#2563EB',
     accentLight: '#93C5FD',
     icon: '🔍',
-    tag: 'Act 01 of 04',
   },
   {
     num: '02',
@@ -19,7 +18,6 @@ const PILLARS = [
     accent: '#7C3AED',
     accentLight: '#C4B5FD',
     icon: '🧠',
-    tag: 'Act 02 of 04',
   },
   {
     num: '03',
@@ -29,7 +27,6 @@ const PILLARS = [
     accent: '#BE185D',
     accentLight: '#F9A8D4',
     icon: '📡',
-    tag: 'Act 03 of 04',
   },
   {
     num: '04',
@@ -39,7 +36,6 @@ const PILLARS = [
     accent: '#0D9488',
     accentLight: '#5EEAD4',
     icon: '⚙️',
-    tag: 'Act 04 of 04',
   },
 ];
 
@@ -79,7 +75,6 @@ function PillarCard({ pillar }) {
       <div className="pillar-card-glow" />
       <div className="pillar-card-inner">
         <div className="pillar-card-bar" />
-        <div className="pillar-card-tag">{pillar.tag}</div>
         <div className="pillar-card-icon">{pillar.icon}</div>
         <h3 className="pillar-card-label">{pillar.label}</h3>
         <p className="pillar-card-desc">{pillar.desc}</p>

@@ -31,9 +31,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
         >
-          <span className="outlined">How can PI</span>
-          <span>accelerate AI</span>
-          <span className="highlight highlight-outlined">... through and through</span>
+          <span className="hero-how-can-pi">How can PI</span>
+          <span className="hero-accelerate-ai">accelerate AI</span>
+          <span className="hero-tagline-line">... through and through</span>
         </motion.h1>
 
         {/* Tagline */}

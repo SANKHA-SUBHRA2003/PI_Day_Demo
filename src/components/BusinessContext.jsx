@@ -23,7 +23,7 @@ const layers = [
   },
   {
     icon: '✅', label: 'AI-Ready Context Model',
-    desc: 'The completed Celonis Context Model — a queryable, semantically rich, relationship-mapped representation of your business, consumable by AI agents via the Knowledge Model API.',
+    desc: 'A queryable, semantically rich, relationship-mapped representation of your business, consumable by AI agents via the Knowledge Model API.',
   },
 ];
 
@@ -97,9 +97,9 @@ export default function BusinessContext() {
         <SlideHeading fromRight>
           <div className="section-intro">
             <div className="section-num" style={{ background: `${ACCENT}18`, borderColor: `${ACCENT}40`, color: ACCENT }}>02</div>
-            <div className="section-label" style={{ color: ACCENT }}>Act 02 of 04 — Knowledge Model Layer</div>
+            <div className="section-label" style={{ color: ACCENT }}>Knowledge Model Layer</div>
             <h2 className="section-title">
-              Business Context<br />
+              Context<br />
               <span style={{ color: ACCENT }}>Enrichment</span>
             </h2>
           </div>
@@ -114,22 +114,7 @@ export default function BusinessContext() {
           </p>
         </SlideHeading>
 
-        {/* CCM Callout */}
-        <motion.div
-          style={{ padding: '24px 28px', background: `${ACCENT}0E`, border: `1px solid ${ACCENT}35`, borderLeft: `4px solid ${ACCENT}`, borderRadius: 10, maxWidth: 760, marginBottom: 72 }}
-          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-        >
-          <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C4B5FD', marginBottom: 8 }}>
-            🚀 Celonis Context Model (CCM)
-          </div>
-          <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.82)', lineHeight: 1.72 }}>
-            Celonis launched the <strong>Celonis Context Model</strong> — a dynamic, real-time digital twin of
-            business operations that consolidates process data, business knowledge, and operational information
-            into a single living model. Our framework operationalises this vision through a structured,
-            practitioner-led enrichment approach at the Knowledge Model layer.{' '}
-            <strong>We are ahead of this curve.</strong>
-          </p>
-        </motion.div>
+
 
         {/* ── NEW: Gap / Enrichment / Example cards ── */}
         <SlideHeading fromRight>
@@ -169,7 +154,7 @@ export default function BusinessContext() {
         <SlideHeading>
           <div className="section-label" style={{ color: ACCENT, marginBottom: 12 }}>Five Layers of Business Context</div>
           <h3 style={{ fontSize: 28, fontWeight: 800, color: 'white', marginBottom: 40 }}>
-            From Raw Events to an AI-Ready Context Model
+            Evaluation of AI Ready Context Model
           </h3>
         </SlideHeading>
 
