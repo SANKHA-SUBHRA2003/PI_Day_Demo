@@ -164,11 +164,10 @@ export function ContactModal({ isOpen, onClose }) {
               </div>
               <div className="qr-modal-contact">
                 <div className="qr-modal-name">Anuj Kumar</div>
-                <div className="qr-modal-role">Partner, Digital Platforms</div>
+                <div className="qr-modal-role">Partner, Data and AI</div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', marginTop: 4 }}>anujkumar2@kpmg.com</div>
                 <div className="qr-modal-company">
-                  <img src="/kpmg-logo.png" alt="KPMG" style={{ height: 14, objectFit: 'contain', filter: 'brightness(0) invert(1)', opacity: 0.9 }} />
-                  KPMG Digital Platforms
+                  KPMG
                 </div>
               </div>
             </div>
